@@ -29,7 +29,7 @@ if __name__ == "__main__":
     if response.status_code == 200:
         json_data = response.json()
         for todo in json_data:
-            if todo['completed']:
+            if todo['completed'] == True:
                 completed_tasks += 1
                 completed_tasks_titles.append(todo['title'])
             total_tasks += 1
@@ -42,7 +42,8 @@ if __name__ == "__main__":
         f"is done with tasks ({completed_tasks}/{total_tasks}):"
     )
     for title in completed_tasks_titles:
-        print("\t" + title)
+        print("     " + title)
+
 
 # Exportar los datos a un archivo CSV
     filename = f"{id}.csv"

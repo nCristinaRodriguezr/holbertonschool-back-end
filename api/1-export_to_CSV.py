@@ -36,12 +36,13 @@ if __name__ == "__main__":
     else:
         print("Error:", response.status_code)
 
+    """
     print("Employee {} is done with tasks({}/{}):"
           .format(name, completed_tasks, total_tasks))
 
     for title in completed_tasks_titles:
         print("     " + title)
-
+    """
 
 # Exportar los datos a un archivo CSV
     filename = f"{id}.csv"

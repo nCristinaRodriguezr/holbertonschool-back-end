@@ -30,7 +30,7 @@ if __name__ == "__main__":
         json_data = response.json()
     else:
         print("Error:", response.status_code)
-    
+
 
 # Exportar los datos a un archivo CSV
     filename = f"{id}.csv"

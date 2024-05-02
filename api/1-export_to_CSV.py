@@ -49,5 +49,5 @@ if __name__ == "__main__":
     with open(filename, mode='w') as file:
         writer = csv.writer(file, quotechar='"', quoting=csv.QUOTE_ALL)
         for todo in json_data:
-            row = [id, name, str(todo["completed"]), todo["title"]]
-            writer.writerow(row)
+            file.write('"{}","{}","{}","{}"\n'
+                       .format(id,name,todo["completed"],todo["title"]))

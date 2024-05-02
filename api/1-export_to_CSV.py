@@ -19,7 +19,7 @@ if __name__ == "__main__":
     )
     if response.status_code == 200:
         json_data = response.json()
-        name = json_data['name']
+        name = json_data['username']
     else:
         print("Error:", response.status_code)
 
@@ -28,21 +28,9 @@ if __name__ == "__main__":
     )
     if response.status_code == 200:
         json_data = response.json()
-        for todo in json_data:
-            if todo['completed'] is True:
-                completed_tasks += 1
-                completed_tasks_titles.append(todo['title'])
-            total_tasks += 1
     else:
         print("Error:", response.status_code)
-
-    """
-    print("Employee {} is done with tasks({}/{}):"
-          .format(name, completed_tasks, total_tasks))
-
-    for title in completed_tasks_titles:
-        print("     " + title)
-    """
+    
 
 # Exportar los datos a un archivo CSV
     filename = f"{id}.csv"

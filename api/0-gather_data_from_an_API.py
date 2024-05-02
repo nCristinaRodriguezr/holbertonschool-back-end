@@ -36,10 +36,8 @@ if __name__ == "__main__":
     else:
         print("Error:", response.status_code)
 
-    print(
-        "Employee",
-        name,
-        f"is done with tasks ({completed_tasks}/{total_tasks}):"
-    )
+    print("Employee {} is done with tasks ({}/{}):"
+          .format(name, completed_tasks, total_tasks))
+
     for title in completed_tasks_titles:
         print("\t " + title)

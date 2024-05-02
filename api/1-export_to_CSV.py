@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
 # Exportar los datos a un archivo CSV
     filename = f"{id}.csv"
-    with open(filename, mode='w', newline='') as file:
+    with open(filename, mode='w') as file:
         writer = csv.writer(file, quotechar='"', quoting=csv.QUOTE_ALL)
         for todo in json_data:
             row = [id, name, str(todo["completed"]), todo["title"]]

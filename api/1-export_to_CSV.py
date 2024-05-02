@@ -29,18 +29,16 @@ if __name__ == "__main__":
     if response.status_code == 200:
         json_data = response.json()
         for todo in json_data:
-            if todo['completed'] == True:
+            if todo['completed'] is True:
                 completed_tasks += 1
                 completed_tasks_titles.append(todo['title'])
             total_tasks += 1
     else:
         print("Error:", response.status_code)
 
-    print(
-        "Employee",
-        name,
-        f"is done with tasks ({completed_tasks}/{total_tasks}):"
-    )
+    print("Employee {} is done with tasks({}/{}):"
+          .format(name, completed_tasks, total_tasks))
+
     for title in completed_tasks_titles:
         print("     " + title)
 
